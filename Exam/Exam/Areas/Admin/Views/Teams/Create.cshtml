@@ -1,0 +1,54 @@
+﻿@using Exam.Areas.Admin.ViewModels
+@model CreateTeamVM
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+        </div>
+        <div class=" h-100 p-4">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-floating mb-3">
+                    <input asp-for="Name" class="form-control">
+                    <label asp-for="Name">Name</label>
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Surname" class="form-control">
+                    <label asp-for="Surname">Surname</label>
+                    <span asp-validation-for="Surname"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Position" class="form-control">
+                    <label asp-for="Position">Position</label>
+                    <span asp-validation-for="Position"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="FacebookLink" class="form-control">
+                    <label asp-for="FacebookLink">FacebookLink</label>
+                    <span asp-validation-for="FacebookLink"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="InstagramLink" class="form-control">
+                    <label asp-for="InstagramLink">InstagramLink</label>
+                    <span asp-validation-for="InstagramLink"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="TwitterLink" class="form-control">
+                    <label asp-for="TwitterLink">TwitterLink</label>
+                    <span asp-validation-for="TwitterLink"></span>
+                </div>
+                <div class=" mb-3">
+                    <input asp-for="Image" class="form-control">
+                    <label asp-for="Image">Image</label>
+                    <span asp-validation-for="Image"></span>
+                </div>
+                <button type="submit">Create
+
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿@using Exam.Models
+@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int count = 1;
+
+}
+
+
+<div class="pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class=" h-100 p-4">
+                <h6 class="mb-4">Responsive Table</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Position</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Facebook</th>
+                                <th scope="col">Instagram</th>
+                                <th scope="col">Twitter</th>
+                                <td><a asp-area="Admin" asp-controller="Teams" asp-action="Create" class="btn btn-primary">Create</a></td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var team in Model)
+                            {
+                                
+                            <tr>
+                                <th scope="row">@count</th>
+                                <td>@team.Name</td>
+                                <td>@team.Surname</td>
+                                <td>@team.Position</td>
+                                <td><img src="~/assets/img/team/@team.ImagePath" height="125"></td>
+                                <td>Facebook</td>
+                                <td>Instagram</td>
+                                <td>Instagram</td>
+                                <td><a asp-area="Admin" asp-controller="Teams" asp-action="Delete" asp-route-id="@team.Id" class="btn btn-danger">Delete</a></td>
+                                <td>
+                                        <a asp-area="Admin" asp-controller="Teams" asp-action="Update" asp-route-id="@team.Id" class="btn btn-info">Update</a>
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
